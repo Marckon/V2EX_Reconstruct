@@ -11,9 +11,10 @@ module.exports = {
         /*输出library暴露为所有模块定义下均可运行的方式*/
         libraryTarget: "umd"
     },
+    devtool: "source-map",
     devServer: {
-        contentBase: path.resolve(__dirname, '..'),
-        publicPath: '/dist'
+        contentBase: path.resolve(__dirname, '..','src'),
+        publicPath: '/dist',
     },
     module:{
       rules:[
@@ -23,6 +24,21 @@ module.exports = {
               use:{
                   loader: "babel-loader"
               }
+          },
+          {
+              test:/\.scss$/,
+              use:[
+                  {loader:"style-loader"},
+                  {
+                      loader:"css-loader",
+                      options: {
+                          modules: true,
+                          camelCase: true,
+                          importLoaders: 1,
+                          localIdentNames: '[local]-[hash:64:5]'
+                      }
+                  }
+              ]
           }
       ]
     },

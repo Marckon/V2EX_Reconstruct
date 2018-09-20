@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Menu} from 'antd';
+import HomePage from './pages/HomePage'
 
 class App extends React.Component{
     render(){
         return (
-            <Menu>
-                <Menu.Item>
-                    home
-                </Menu.Item>
-            </Menu>
+            <div>
+                <HomePage/>
+            </div>
         )
     }
 }

@@ -18,7 +18,7 @@
     "webpack-dev-server": "^3.1.8"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ./tool/webpack.base.config --open",
+    "start": "webpack-dev-server --config ./tool/webpack.base.config --hot --open",
     "build": "webpack --config ./tool/webpack.base.config"
   },
   "devDependencies": {
