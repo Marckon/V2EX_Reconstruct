@@ -1,0 +1,27 @@
+{
+  "name": "v2ex",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.9.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.18.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ./tool/webpack.base.config --open",
+    "build": "webpack --config ./tool/webpack.base.config"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.0"
+  }
+}
