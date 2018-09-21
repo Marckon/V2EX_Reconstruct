@@ -3,7 +3,7 @@ import {
     V2Header,
     TopicsList
 } from '../../components';
-import {Layout,} from 'antd';
+import {Layout,Row,Col} from 'antd';
 import styles from './index.scss';
 
 const {Header,Content,Sider,Footer}=Layout;
@@ -16,14 +16,14 @@ class  HomePage extends React.Component{
                 <Header className={styles.header}>
                     <V2Header/>
                 </Header>
-                <Layout className={styles.middle}>
-                    <Content>
-                        <TopicsList/>
-                    </Content>
-                    <Sider>
+                <Row className={styles.middle}>
+                    <Col span={16} offset={2}>
+                            <TopicsList/>
+                    </Col>
+                    <Col span={6}>
 
-                    </Sider>
-                </Layout>
+                    </Col>
+                </Row>
                 <Footer>
 
                 </Footer>
