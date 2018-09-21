@@ -3,7 +3,7 @@ import {
     V2Header,
     TopicsList
 } from '../../components';
-import {Layout} from 'antd';
+import {Layout,} from 'antd';
 import styles from './index.scss';
 
 const {Header,Content,Sider,Footer}=Layout;

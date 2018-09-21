@@ -13,34 +13,41 @@ module.exports = {
     },
     devtool: "source-map",
     devServer: {
-        contentBase: path.resolve(__dirname, '..','src'),
+        contentBase: path.resolve(__dirname, '..', 'src'),
         publicPath: '/dist',
+        proxy: {
+            '/api': {
+                target: 'https://www.v2ex.com/',
+                secure:false,
+                changeOrigin:true,
+            }
+        }
     },
-    module:{
-      rules:[
-          {
-              test:/\.js$/,
-              exclude: path.resolve(__dirname,'node_modules'),
-              use:{
-                  loader: "babel-loader"
-              }
-          },
-          {
-              test:/\.scss$/,
-              use:[
-                  {loader:"style-loader"},
-                  {
-                      loader:"css-loader",
-                      options: {
-                          modules: true,
-                          camelCase: true,
-                          importLoaders: 1,
-                          localIdentNames: '[local]-[hash:64:5]'
-                      }
-                  }
-              ]
-          }
-      ]
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {loader: "style-loader"},
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            camelCase: true,
+                            importLoaders: 1,
+                            localIdentNames: '[local]-[hash:64:5]'
+                        }
+                    }
+                ]
+            }
+        ]
     },
     externals: {
         react: {
