@@ -1,11 +1,12 @@
 import React from 'react';
 import {
     V2Header,
+    TopicsList
 } from '../../components';
 import {Layout} from 'antd';
 import styles from './index.scss';
 
-const {Header}=Layout;
+const {Header,Content,Sider,Footer}=Layout;
 
 class  HomePage extends React.Component{
 
@@ -15,6 +16,17 @@ class  HomePage extends React.Component{
                 <Header className={styles.header}>
                     <V2Header/>
                 </Header>
+                <Layout className={styles.middle}>
+                    <Content>
+                        <TopicsList/>
+                    </Content>
+                    <Sider>
+
+                    </Sider>
+                </Layout>
+                <Footer>
+
+                </Footer>
             </Layout>
         )
     }

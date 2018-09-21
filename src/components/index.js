@@ -1,4 +1,4 @@
-// import TopicsList from './TopicsList';
+import TopicsList from './TopicsList';
 import V2Header from './V2Header';
 /*import HotNodes from './HotNodes';
 import HotTodayPanel from './HotTodayPanel';
@@ -7,7 +7,7 @@ import LoginPanel from './LoginPanel';
 import WebStatusPanel from './WebStatusPanel';*/
 
 export {
-    /*TopicsList,*/
+    TopicsList,
     V2Header,
   /*  HotNodes,
     HotTodayPanel,

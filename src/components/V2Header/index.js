@@ -10,8 +10,14 @@ class V2Header extends React.Component {
         return (
                 <Row type={"flex"} justify={"center"} align={"center"}>
                     <Col span={8} offset={4}>
-                        <img src="https://www.v2ex.com/static/img/v2ex@2x.png" alt="V2EX" className={styles.headerIcon}/>
-                        <Search style={{width:160}}/>
+                        <Row type={"flex"} justify={"center"}>
+                            <Col span={8}>
+                                <img src="https://www.v2ex.com/static/img/v2ex@2x.png" alt="V2EX" className={styles.headerIcon}/>
+                            </Col>
+                            <Col span={14} offset={2}>
+                                <Search/>
+                            </Col>
+                        </Row>
                     </Col>
                     <Col span={8}  offset={4} className={styles.menuWrapper}>
                         <Menu mode={"horizontal"} className={styles.menu}>
