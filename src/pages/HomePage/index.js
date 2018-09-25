@@ -6,7 +6,7 @@ import {
     QRCode,
     FooterComponent
 } from '../../components';
-import {Layout,Row,Col} from 'antd';
+import {Layout,Row,Col,BackTop} from 'antd';
 import styles from './index.scss';
 
 const {Header,Footer}=Layout;
@@ -31,6 +31,7 @@ class  HomePage extends React.Component{
                 <Footer className={styles.footer}>
                     <FooterComponent className={styles.footerContent}/>
                 </Footer>
+                <BackTop/>
             </Layout>
         )
     }
