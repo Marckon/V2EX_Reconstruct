@@ -17,7 +17,7 @@ module.exports = {
         publicPath: '/dist',
         proxy: {
             '/api': {
-                target: 'https://www.v2ex.com/',
+                target: 'https://www.v2ex.com/api',
                 secure:false,
                 changeOrigin:true,
             }
@@ -42,7 +42,6 @@ module.exports = {
                             modules: true,
                             camelCase: true,
                             importLoaders: 1,
-                            localIdentNames: '[local]-[hash:64:5]'
                         }
                     }
                 ]

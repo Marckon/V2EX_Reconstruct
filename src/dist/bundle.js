@@ -860,7 +860,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 import HotTodayPanel from './HotTodayPanel';
 import LatestNodes from './LatestNodes';
 import LoginPanel from './LoginPanel';
-import WebStatusPanel from './WebStatusPanel';*/
+import QRCode from './QRCode';*/
 
 exports.V2Header = _V2Header2.default; // import TopicsList from './TopicsList';
 

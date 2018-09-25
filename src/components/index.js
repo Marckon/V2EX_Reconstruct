@@ -1,17 +1,13 @@
 import TopicsList from './TopicsList';
 import V2Header from './V2Header';
-/*import HotNodes from './HotNodes';
-import HotTodayPanel from './HotTodayPanel';
-import LatestNodes from './LatestNodes';
 import LoginPanel from './LoginPanel';
-import WebStatusPanel from './WebStatusPanel';*/
+import QRCode from './QRCode';
+import FooterComponent from './Footer';
 
 export {
     TopicsList,
     V2Header,
-  /*  HotNodes,
-    HotTodayPanel,
-    LatestNodes,
     LoginPanel,
-    WebStatusPanel*/
+    QRCode,
+    FooterComponent
 }

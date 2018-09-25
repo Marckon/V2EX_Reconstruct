@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import {List, Avatar, Icon, Skeleton} from 'antd';
+import styles from './index.scss'
 
 class TopicBar extends React.Component {
 
@@ -36,10 +37,10 @@ class TopicBar extends React.Component {
                     renderItem={item => (
                             <List.Item
                                 actions={[<IconText type="message" text={item.reply_count} />,<IconText type={"eye"} text={item.visit_count}/>,<IconText text={getDate(item.create_at)}/>]}
-                                extra={<a href={'#'}><img src={item.author.avatar_url} alt={item.author.loginname} width={50}/></a>}
+                                extra={<a href={'#'}><img src={item.author.avatar_url} alt={item.author.loginname} className={styles.avatar}/></a>}
                             >
                                 <List.Item.Meta
-                                    avatar={<Avatar src={item.author.avatar_url}/>}
+                                    avatar={<Avatar src={item.author.avatar_url} shape={"circle"} size={"small"}/>}
                                     title={<a href={item.url}>{item.title}</a>}
                                     description={item.content.replace(/<[^>]+>/g,'').slice(0,90)+'...'}
                                 />
