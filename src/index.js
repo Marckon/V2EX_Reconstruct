@@ -17,12 +17,31 @@ class App extends React.Component{
             topicLists:null
         };
         this.handleChangeTopicsList=this.handleChangeTopicsList.bind(this);
+        this.transferTab=this.transferTab.bind(this)
     }
 
     static childContextTypes={
         topicLists:propTypes.object,
-        handleChangeTopicsList:propTypes.func
+        handleChangeTopicsList:propTypes.func,
+        transferTab:propTypes.func
     };
+
+    transferTab(tab){
+        switch (tab){
+            case "share":
+                return "分享";
+            case "all":
+                return "全部";
+            case "good":
+                return "精华";
+            case "ask":
+                return "问答";
+            case "job":
+                return "招聘";
+            default:
+                return "未知";
+        }
+    }
 
     handleChangeTopicsList(tab){
         this.setState({
@@ -39,7 +58,8 @@ class App extends React.Component{
     getChildContext(){
         return {
             topicLists:this.state.topicLists,
-            handleChangeTopicsList:this.handleChangeTopicsList
+            handleChangeTopicsList:this.handleChangeTopicsList,
+            transferTab:this.transferTab,
         }
     }
 
