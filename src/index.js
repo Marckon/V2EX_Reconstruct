@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import HomePage from './pages/HomePage'
 import axios from 'axios';
 import propTypes from 'prop-types';
+import {BrowserRouter,Link,Route,IndexRoute} from 'react-router-dom';
 
 const http=axios.create({
     baseURL:' https://cnodejs.org/api/v1'
@@ -39,11 +40,13 @@ class App extends React.Component{
 
     render(){
         return (
-            <div>
-                <HomePage/>
-            </div>
+            <BrowserRouter>
+                <Route path={"/"} component={HomePage}/>
+            </BrowserRouter>
         )
     }
 }
 
-ReactDOM.render(<App/>,document.getElementById('root'))
+ReactDOM.render(
+    <App/>
+    ,document.getElementById('root'))
