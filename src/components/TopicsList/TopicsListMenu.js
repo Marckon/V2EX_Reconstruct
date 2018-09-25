@@ -1,13 +1,27 @@
 import React from 'react';
 import {Menu} from 'antd';
+import propTypes from 'prop-types';
 
 const {Item,SubMenu,}=Menu;
 
 class TopicsListMenu extends React.Component{
 
+    static contextTypes={
+      handleChangeTopicsList:  propTypes.func
+    };
+
     render(){
         return (
-            <Menu mode={"horizontal"}>
+            <Menu
+                mode={"horizontal"}
+                onClick={({key})=>this.context.handleChangeTopicsList(key)}
+            >
+                <Item key={"all"}>全部</Item>
+                <Item key={"good"}>精华</Item>
+                <Item key={"share"}>分享</Item>
+                <Item key={"ask"}>问答</Item>
+                <Item key={"job"}>招聘</Item>
+                <Item key={"test"}>客户端测试</Item>
                 <SubMenu title={"技术"}>
                     <Item>程序猿</Item>
                     <Item>Python</Item>

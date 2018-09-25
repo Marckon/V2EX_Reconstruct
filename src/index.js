@@ -15,23 +15,37 @@ class App extends React.Component{
         super(props);
         this.state={
             topicLists:null
-        }
+        };
+        this.handleChangeTopicsList=this.handleChangeTopicsList.bind(this);
     }
 
     static childContextTypes={
-        topicLists:propTypes.object
+        topicLists:propTypes.object,
+        handleChangeTopicsList:propTypes.func
     };
+
+    handleChangeTopicsList(tab){
+        this.setState({
+            topicLists:null
+        });
+        http.get(`topics/?tab=${tab}`)
+            .then(res=>{
+                this.setState({
+                    topicLists:res.data.data
+                })
+            })
+    }
 
     getChildContext(){
         return {
-            topicLists:this.state.topicLists
+            topicLists:this.state.topicLists,
+            handleChangeTopicsList:this.handleChangeTopicsList
         }
     }
 
     componentDidMount(){
         http.get('/topics')
             .then(res=>{
-                console.log(res.data.data)
                 this.setState({
                     topicLists:res.data.data
                 })
