@@ -66,6 +66,12 @@ module.exports = {
             commonjs: 'antd',
             commonjs2: 'antd',
             amd: 'antd'
+        },
+        'react-router-dom':{
+            root:'ReactRouterDOM',
+            commonjs:'react-router-dom',
+            commonjs2:'react-router-dom',
+            amd:'react-router-dom'
         }
     }
 };
