@@ -1,33 +1,34 @@
 import React from 'react';
 import {
     V2Header,
-    TopicsList,
-    LoginPanel,
-    QRCode,
     FooterComponent
 } from '../../components';
-import {Layout,Row,Col,BackTop} from 'antd';
+import {Layout,BackTop} from 'antd';
 import styles from './index.scss';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import TopicPage from '../TopicPage';
+import ArticlePage from '../ArticlePage';
 
-const {Header,Footer}=Layout;
+const {Header,Footer,Content}=Layout;
 
 class  HomePage extends React.Component{
 
     render(){
         return (
-            <Layout>
+            <Layout className={styles.layout}>
                 <Header className={styles.header}>
                     <V2Header/>
                 </Header>
-                <Row className={styles.middle} >
-                    <Col span={16} offset={2}>
-                            <TopicsList/>
-                    </Col>
-                    <Col span={4} offset={1}>
-                        <LoginPanel/>
-                        <QRCode className={styles["qr-code"]}/>
-                    </Col>
-                </Row>
+                <Content>
+                    <BrowserRouter history={"browserHistory"}>
+                        {/*router只能有一个子元素，因此要加上Switch标签*/}
+                        <Switch>
+                            {/*加上exact 防止匹配失败导致404错误*/}
+                            <Route path={"/"} exact component={TopicPage}/>
+                            <Route path={"/article/:id"} component={ArticlePage}/>
+                        </Switch>
+                    </BrowserRouter>
+                </Content>
                 <Footer className={styles.footer}>
                     <FooterComponent className={styles.footerContent}/>
                 </Footer>

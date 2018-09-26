@@ -1,7 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import {List, Avatar, Icon, Skeleton} from 'antd';
-import styles from './index.scss'
+import styles from './index.scss';
+import {Link} from 'react-router-dom';
 
 class TopicBar extends React.Component {
 
@@ -42,7 +43,7 @@ class TopicBar extends React.Component {
                             >
                                 <List.Item.Meta
                                     avatar={<Avatar src={item.author.avatar_url} shape={"circle"} size={"small"}/>}
-                                    title={<a href={item.url}>{item.title}</a>}
+                                    title={<Link to={`/article/${item.id}`}>{item.title}</Link>}
                                     description={item.content.replace(/<[^>]+>/g,'').slice(0,90)+'...'}
                                 />
                             </List.Item>

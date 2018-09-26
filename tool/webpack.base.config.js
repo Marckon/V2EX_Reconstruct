@@ -15,6 +15,8 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, '..', 'src'),
         publicPath: '/dist',
+        //使用historyApiFallback 当出现404响应时，以index代替
+        historyApiFallback:true,
         proxy: {
             '/api': {
                 target: 'https://www.v2ex.com/api',
